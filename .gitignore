@@ -1,0 +1,3 @@
+venv
+.idea
+./gerenciamento_pet/db.sqlite3

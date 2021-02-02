@@ -1,0 +1,7 @@
+1 -> criar aplicação: django startproject 'nome_projeto'
+2 -> criar app: python manage.py startapp 'nome_app'
+3 -> adcionar aplicação ao settings.py
+4 -> database, conexão e migração: python manage.py migrate
+5 -> criar no model no app os campos do nosso BD
+6 -> fazer a migração para o banco de dados: python manage.py makemigrations e migrate
+
