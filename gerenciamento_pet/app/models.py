@@ -13,7 +13,7 @@ class EnderecoCliente(models.Model):
 class Cliente(models.Model):
     nome = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField(null=False, blank=False)
-    endereco = models.ForeignKey(EnderecoCliente, on_delete=models.CASCADE)
+    endereco = models.ForeignKey(EnderecoCliente, on_delete=models.CASCADE) # relacionamento 1:N
     cpf = models.CharField(max_length=14, null=False, blank=False)
     data_nascimento = models.DateField(null=False, blank=False)
     profissao = models.CharField(max_length=25, null=False, blank=False)
