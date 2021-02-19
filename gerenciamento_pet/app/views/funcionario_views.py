@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
 
@@ -6,11 +7,13 @@ from ..forms.funcionario_forms import FuncionarioForm
 from ..services import funcionario_service
 
 
+@user_passes_test(lambda u: u.cargo == 2)
 def listar_funcionarios(request):
     funcionarios = funcionario_service.listar_funcionarios()
     return render(request, 'funcionarios/lista_funcionarios.html', {'funcionarios': funcionarios})
 
 
+@user_passes_test(lambda u: u.cargo == 2)
 def inserir_funcionario(request):
     if request.method == "POST":
         form_funcionario = FuncionarioForm(request.POST)
